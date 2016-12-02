@@ -1,4 +1,4 @@
-#include "minesum.c"
+#include "minesum.h"
 
 
 
