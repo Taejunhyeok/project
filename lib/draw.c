@@ -33,7 +33,7 @@ void draw(int diff)
 
    {
 
-    printf("◎");
+    printf("◎ ");
 
    }
 
@@ -47,13 +47,13 @@ void draw(int diff)
 
     case 0:
 
-     printf("○");
+     printf("○ ");
 
      break;
 
     case 1:
 
-     printf("●");
+     printf("● ");
 
      break;
 
@@ -97,7 +97,7 @@ void draw(int diff)
 
    {
 
-    printf("▦");
+    printf("▦ ");
 
    }
 
@@ -111,55 +111,55 @@ void draw(int diff)
 
     case 0:
 
-     printf("○");
+     printf("○ ");
 
      break;
 
     case 1:
 
-     printf("①");
+     printf("① ");
 
      break;
 
     case 2:
 
-     printf("②");
+     printf("② ");
 
      break;
 
     case 3:
 
-     printf("③");
+     printf("③ ");
 
      break;
 
     case 4:
 
-     printf("④");
+     printf("④ ");
 
      break;
 
     case 5:
 
-     printf("⑤");
+     printf("⑤ ");
 
      break;
 
     case 6:
 
-     printf("⑥");
+     printf("⑥ ");
 
      break;
 
     case 7:
 
-     printf("⑦");
+     printf("⑦ ");
 
      break;
 
     case 8:
 
-     printf("⑧");
+     printf("⑧ ");
 
      break;
 
