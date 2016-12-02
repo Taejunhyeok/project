@@ -1,4 +1,25 @@
-#include <stdio.h>
+#include "menu.h"
+
+int getch(void)
+{
+    int ch;
+
+    struct termios old;
+    struct termios new;
+
+    tcgetattr(0, &old);
+
+    new = old;
+    new.c_lflag &= ~(ICANON|ECHO);
+    new.c_cc[VMIN] = 1;
+    new.c_cc[VTIME] = 0;
+
+    tcsetattr(0, TCSAFLUSH, &new);
+    ch = getchar();
+    tcsetattr(0, TCSAFLUSH, &old);
+
+    return ch;
+}
 
 int menu()
 {
@@ -34,7 +55,7 @@ int menu()
   default:
    check = 0;
    printf("잘못된 선택입니다.\n");
-   _getch();
+   getch();
    break;
   }
  }
