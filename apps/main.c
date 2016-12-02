@@ -34,8 +34,8 @@ int getch(void)
 
 int main ()
 {
- short h = 0;
- short w = 0;
+ int h = 0;
+ int w = 0;
  int diff = 0;
 A:
  diff = menu();
