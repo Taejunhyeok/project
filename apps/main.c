@@ -1,8 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <signal.h>
+#include <termio.h>
+#include <unistd.h>
 
+int width = 25;
+int heigh = 20;
 int table[22][27] = {0};
+int ntable[22][27] = {0};
+
+
+int getch(void)
+{
+    int ch;
+
+    struct termios old;
+    struct termios new;
+
+    tcgetattr(0, &old);
+
+    new = old;
+    new.c_lflag &= ~(ICANON|ECHO);
+    new.c_cc[VMIN] = 1;
+    new.c_cc[VTIME] = 0;
+
+    tcsetattr(0, TCSAFLUSH, &new);
+    ch = getchar();
+    tcsetattr(0, TCSAFLUSH, &old);
+
+    return ch;
+}
+
 int main ()
 {
  short h = 0;
@@ -21,7 +50,7 @@ A:
   if(table[h][w]==1)
   {
    printf("지뢰를 밟았습니다! T-T\n");
-   _getch();
+   getch();
    break;
   }
   else
@@ -29,18 +58,18 @@ A:
    trigger(h,w);
    printf("지뢰를 밟지 않았습니다! ^o^\n");
    printf("1초 후 자동으로 갱신됩니다.");
-   Sleep(250);
+   sleep(0.25);
    printf(".");
-   Sleep(250);
+   sleep(0.25);
    printf(".");
-   Sleep(250);
+   sleep(0.25);
    printf(".");
-   Sleep(250);
+   sleep(0.25);
   }
   if (checkend(diff)==1)
   {
    printf("축하합니다! 게임에서 이겼습니다!\n");
-   _getch();
+   getch();
    break;
   }
  }
@@ -61,7 +90,7 @@ A:
   {
    diff = 0;
    printf("잘못된 선택입니다.\n");
-   _getch();
+   getch();
   }
  }
  return 0;
