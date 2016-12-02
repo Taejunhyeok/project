@@ -1,6 +1,6 @@
+#include "minesum.c"
 
 
-int table[22][27] = {0};
 
 int minesum(int i, int j)
 {
