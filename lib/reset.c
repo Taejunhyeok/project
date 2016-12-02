@@ -1,9 +1,5 @@
-#include <time.h>
+#include "reset.h"
 
-int width = 25;
-int heigh = 20;
-int table[22][27] = {0};
-int ntable[22][27] = {0};
 void reset(int diff)
 {
  int i = 0;
