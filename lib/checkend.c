@@ -1,3 +1,4 @@
+#include "checkend.h"
 
 int checkend(int diff)
 {
