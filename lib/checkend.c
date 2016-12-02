@@ -1,6 +1,4 @@
-int width = 25;
-int heigh = 20;
-int ntable[22][27] = {0};
+
 int checkend(int diff)
 {
  int i = 0;
