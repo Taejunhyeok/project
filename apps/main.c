@@ -57,7 +57,7 @@ A:
   {
    trigger(h,w);
    printf("지뢰를 밟지 않았습니다! ^o^\n");
-   printf("1초 후 자동으로 갱신됩니다.");
+   printf("1초 후 자동으로 갱신됩니다.\n");
    sleep(0.25);
    printf(".");
    sleep(0.25);
